@@ -8,15 +8,24 @@ In this project we build a aplication called to-do list where you can create a l
 
 - Major languages
 - HTML, CSS, Javascript
+- Git
 - Webpack
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps:
+To get a local copy up and running follow these simple example steps.
 
-1. Go to the [repository page](https://github.com/rega1237/to-do-list).
-2. Press the "Code" button and copy the link.
-3. Clone it using git command `git clone <link>`.
+### Prerequisites
+- Have LTS version of npm and node.js on your local environment.
+
+### Setup
+- Download or clone the repository. [repository page](https://github.com/rega1237/to-do-list).
+
+### Install
+- Run npm install in the folder where your have the files.
+
+### Usage
+- Run npm start on your local path to start the web server.
 
 ## Author
 
