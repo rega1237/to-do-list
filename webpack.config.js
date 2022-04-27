@@ -13,14 +13,14 @@ module.exports = {
     hot: true,
     compress: true,
     historyApiFallback: true,
-  },  
+  },
   plugins: [
-  new HtmlWebpackPlugin({
-    template: './src/template.html'
-  }),
-],
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+    }),
+  ],
   output: {
-      path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
     runtimeChunk: 'single',
@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-      }
+      },
     ],
   },
-}
+};
