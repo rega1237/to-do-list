@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+.list-div {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+.input-text {
+  padding: 10px;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+.insert-text {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+}
+
+.insert-text:focus-visible {
+  outline: none;
+}
+
+.list-container {
+  list-style: none;
+}
+
+.li-wraper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+.li-wraper input {
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.li-wraper p {
+  flex-grow: 1;
+}
+
+.clear-elements {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #dedede;
+  color: #757575;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
