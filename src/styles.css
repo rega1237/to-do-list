@@ -83,3 +83,7 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
+.display-none {
+  display: none;
+}
