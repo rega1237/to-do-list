@@ -9,12 +9,12 @@ const toDoArr = [
   {
     description: 'fix the car',
     completed: false,
-    index: 0,
+    index: 1,
   },
   {
     description: 'walking the dog',
     completed: false,
-    index: 0,
+    index: 2,
   }];
 
 const displayList = () => {
