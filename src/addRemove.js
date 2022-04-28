@@ -5,11 +5,6 @@ const addInput = document.querySelector('.insert-text');
 const form = document.getElementById('form');
 let addValue = '';
 
-const changeValue = (indexChange, value) => {
-  toDoArr[indexChange - 1].description = value;
-  localStorage.setItem('toDo', JSON.stringify(toDoArr));
-};
-
 const add = () => {
   toDoArr.push({ description: addValue, completed: false, index: toDoArr.length + 1 });
   localStorage.setItem('toDo', JSON.stringify(toDoArr));
@@ -28,6 +23,11 @@ const remove = (element) => {
   displayList();
 };
 
+const changeValue = (indexChange, value) => {
+  toDoArr[indexChange - 1].description = value;
+  localStorage.setItem('toDo', JSON.stringify(toDoArr));
+};
+
 export const displayList = () => {
   if (JSON.parse(localStorage.getItem('toDo'))) {
     toDoArr = JSON.parse(localStorage.getItem('toDo'));
@@ -37,7 +37,6 @@ export const displayList = () => {
   const listUl = document.querySelector('.list-container');
   listUl.innerHTML = null;
   let listText;
-
   for (let i = 0; i < toDoArr.length; i += 1) {
     const { description } = toDoArr[i];
     const { index } = toDoArr[i];
@@ -64,7 +63,7 @@ export const displayList = () => {
     liWraper.append(iconDots);
     listElement.append(liWraper);
     listUl.append(listElement);
-    const iconLi = iconDots.children[0];
+
     // Change the value of the task in the input
 
     textList.addEventListener('keypress', (e) => {
@@ -81,6 +80,7 @@ export const displayList = () => {
 
     // Change icon to trash can and vice versa
 
+    const iconLi = iconDots.children[0];
     listElement.addEventListener('click', () => {
       iconLi.classList.toggle('fa-ellipsis-vertical');
       iconLi.classList.toggle('fa-trash');
