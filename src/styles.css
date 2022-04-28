@@ -63,8 +63,14 @@ main {
   height: 15px;
 }
 
-.li-wraper p {
+.input-list-element {
   flex-grow: 1;
+  padding: 10px 5px;
+  border: none;
+}
+
+.input-list-element:focus-visible {
+  outline: none;
 }
 
 .clear-elements {
@@ -82,4 +88,16 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+.display-none {
+  display: none;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.background-list {
+  background-color: rgba(254 231 97 / 63%);
 }
