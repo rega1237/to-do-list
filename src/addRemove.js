@@ -52,7 +52,6 @@ export const displayList = () => {
     textList.type = 'text';
     textList.name = 'toDoElement';
     const iconDots = document.createElement('span');
-    const iconLi = iconDots.children[0];
     liWraper.className = 'li-wraper';
     listElement.className = 'li-element';
     textList.className = `input-list-element ${(index)}`;
@@ -65,7 +64,7 @@ export const displayList = () => {
     liWraper.append(iconDots);
     listElement.append(liWraper);
     listUl.append(listElement);
-
+    const iconLi = iconDots.children[0];
     // Change the value of the task in the input
 
     textList.addEventListener('keypress', (e) => {
