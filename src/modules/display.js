@@ -1,50 +1,22 @@
-/* eslint-disable no-use-before-define, import/prefer-default-export */
+/* eslint-disable import/no-cycle */
 
-let toDoArr = [];
-const addInput = document.querySelector('.insert-text');
-const form = document.getElementById('form');
-let addValue = '';
+import data from './data.js';
+import { remove, changeValue, getFromLocal } from './addRemove.js';
+import checkBoxValue from './checkbox.js';
 
-const add = () => {
-  toDoArr.push({ description: addValue, completed: false, index: toDoArr.length + 1 });
-  localStorage.setItem('toDo', JSON.stringify(toDoArr));
-};
-
-const remove = (element) => {
-  toDoArr = toDoArr.filter((toDo) => toDo.index !== parseInt(element.parentNode.id, 10));
-
-  toDoArr.forEach((toDo, idx) => {
-    toDoArr[idx].index = idx + 1;
-  });
-
-  element.parentNode.parentNode.remove();
-
-  localStorage.setItem('toDo', JSON.stringify(toDoArr));
-  displayList();
-};
-
-const changeValue = (indexChange, value) => {
-  toDoArr[indexChange - 1].description = value;
-  localStorage.setItem('toDo', JSON.stringify(toDoArr));
-};
-
-export const displayList = () => {
-  if (JSON.parse(localStorage.getItem('toDo'))) {
-    toDoArr = JSON.parse(localStorage.getItem('toDo'));
-  } else {
-    toDoArr = [];
-  }
+const displayList = () => {
+  getFromLocal();
   const listUl = document.querySelector('.list-container');
   listUl.innerHTML = null;
   let listText;
-  for (let i = 0; i < toDoArr.length; i += 1) {
-    const { description } = toDoArr[i];
-    const { index } = toDoArr[i];
+  for (let i = 0; i < data.toDoArr.length; i += 1) {
+    const { description } = data.toDoArr[i];
+    const { index } = data.toDoArr[i];
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.name = 'name';
-    checkbox.value = 'value';
-    checkbox.id = 'checkbox';
+    checkbox.name = 'task-completed';
+    checkbox.value = 'false';
+    checkbox.id = `${i + 1}`;
     const listElement = document.createElement('li');
     const liWraper = document.createElement('div');
     const textList = document.createElement('input');
@@ -64,6 +36,8 @@ export const displayList = () => {
     listElement.append(liWraper);
     listUl.append(listElement);
 
+    const iconLi = iconDots.children[0];
+
     // Change the value of the task in the input
 
     textList.addEventListener('keypress', (e) => {
@@ -80,7 +54,6 @@ export const displayList = () => {
 
     // Change icon to trash can and vice versa
 
-    const iconLi = iconDots.children[0];
     listElement.addEventListener('click', () => {
       iconLi.classList.toggle('fa-ellipsis-vertical');
       iconLi.classList.toggle('fa-trash');
@@ -97,18 +70,11 @@ export const displayList = () => {
         remove(e.target);
       }
     });
+
+    checkbox.addEventListener('input', (e) => {
+      checkBoxValue(e);
+    });
   }
 };
 
-addInput.addEventListener('input', () => {
-  addValue = addInput.value;
-});
-
-addInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    add();
-    displayList();
-    form.reset();
-  }
-});
+export default displayList;
