@@ -1,5 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+Live DEMO click - GitHub: [HERE](https://rega1237.github.io/to-do-list/)
+
 # To-do List
 
 In this project we build a aplication called to-do list where you can create a list of thigs have to do, this aplication was built with plenty JavaScript
