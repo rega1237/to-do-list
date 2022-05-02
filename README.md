@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Live DEMO click - GitHub: [HERE](https://rega1237.github.io/to-do-list/)
+Live DEMO click [HERE](https://rega1237.github.io/to-do-list/)
 
 # To-do List
 
