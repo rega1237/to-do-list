@@ -21,9 +21,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-  },
-  optimization: {
-    runtimeChunk: 'single',
+    filename: 'bundle.js',
   },
   module: {
     rules: [

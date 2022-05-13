@@ -26,6 +26,7 @@ const displayList = () => {
     liWraper.className = 'li-wraper';
     listElement.className = 'li-element';
     textList.className = `input-list-element ${(index)}`;
+    textList.id = 'add-element'
     listText = description;
     textList.value = listText;
     iconDots.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';

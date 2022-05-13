@@ -3,7 +3,7 @@ import data from './data.js';
 import { setOnLocal } from './addRemove.js';
 
 const checkBoxValue = (e) => {
-  const { target } = e;
+  const {target} = e;
   const targetId = parseInt(target.id, 10);
   for (let i = 0; i < data.toDoArr.length; i += 1) {
     if (data.toDoArr[i].index === targetId && target.value === 'false') {
